@@ -1,0 +1,15 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: chitchat
+spec:
+  replicas: 2
+  template:
+    metadata:
+      name: chitchat
+      labels:
+        app: chitchat
+    spec:
+      containers:
+      - image: $dockerhuburl:$BUILD_NUMBER
+        name: nodejs
